@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useCart } from "@/components/cart/cart-provider";
 
 function formatPrice(amount) {
@@ -14,7 +13,6 @@ function formatPrice(amount) {
 
 export default function CartContents({ isPage = false, onClose }) {
   const { items, subtotal, updateQuantity, removeItem } = useCart();
-  const [checkoutMessage, setCheckoutMessage] = useState("");
 
   return (
     <div
@@ -161,23 +159,13 @@ export default function CartContents({ isPage = false, onClose }) {
             <span>Total</span>
             <span>{formatPrice(subtotal)}</span>
           </div>
-          <button
-            className="flex min-h-[52px] w-full items-center justify-center rounded-md border-0 bg-[#141718] px-6 text-lg font-medium leading-8 tracking-[-0.4px] text-white transition-colors hover:bg-[#30383a]"
-            type="button"
-            onClick={() =>
-              setCheckoutMessage("Checkout is not connected in this demo yet.")
-            }
+          <Link
+            className="mt-3 flex min-h-[52px] w-full items-center justify-center rounded-md bg-[#141718] px-6 text-lg font-medium leading-8 tracking-[-0.4px] text-white transition-colors hover:bg-[#30383a]"
+            href="/checkout"
+            onClick={onClose}
           >
-            Checkout
-          </button>
-          {checkoutMessage ? (
-            <p
-              className="mb-0 mt-2 text-center text-xs leading-5 text-[#6c7275]"
-              role="status"
-            >
-              {checkoutMessage}
-            </p>
-          ) : null}
+            Proceed to buy
+          </Link>
           {!isPage ? (
             <div className="mt-3 text-center">
               <Link

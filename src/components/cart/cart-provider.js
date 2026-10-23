@@ -3,6 +3,7 @@
 import {
   createContext,
   useContext,
+  useCallback,
   useEffect,
   useState,
   useSyncExternalStore,
@@ -33,15 +34,20 @@ function readItems() {
   try {
     const storedItems = JSON.parse(getSnapshot());
     if (!Array.isArray(storedItems)) return [];
-    return storedItems.filter(
-      (item) =>
+    return storedItems
+      .filter(
+        (item) =>
         item.id &&
         item.name &&
         item.image &&
         Number.isFinite(item.unitPrice) &&
         Number.isInteger(item.quantity) &&
         item.quantity > 0,
-    );
+      )
+      .map((item) => ({
+        ...item,
+        slug: item.slug || item.image.replace(/\.[^.]+$/, ""),
+      }));
   } catch {
     return [];
   }
@@ -62,15 +68,20 @@ export function CartProvider({ children }) {
   try {
     const storedItems = JSON.parse(snapshot);
     items = Array.isArray(storedItems)
-      ? storedItems.filter(
-          (item) =>
+      ? storedItems
+          .filter(
+            (item) =>
             item.id &&
             item.name &&
             item.image &&
             Number.isFinite(item.unitPrice) &&
             Number.isInteger(item.quantity) &&
             item.quantity > 0,
-        )
+          )
+          .map((item) => ({
+            ...item,
+            slug: item.slug || item.image.replace(/\.[^.]+$/, ""),
+          }))
       : [];
   } catch {
     items = [];
@@ -104,6 +115,9 @@ export function CartProvider({ children }) {
             ...currentItems,
             {
               id,
+              slug:
+                product.slug ||
+                String(product.image).replace(/\.[^.]+$/, ""),
               name: product.name,
               image: product.image,
               variant: product.variant || null,
@@ -130,6 +144,8 @@ export function CartProvider({ children }) {
     writeItems(readItems().filter((item) => item.id !== id));
   }
 
+  const clearCart = useCallback(() => writeItems([]), []);
+
   const itemCount = items.reduce((count, item) => count + item.quantity, 0);
   const subtotal = items.reduce(
     (amount, item) => amount + item.unitPrice * item.quantity,
@@ -145,6 +161,7 @@ export function CartProvider({ children }) {
         addItem,
         updateQuantity,
         removeItem,
+        clearCart,
         isCartOpen,
         setIsCartOpen,
       }}

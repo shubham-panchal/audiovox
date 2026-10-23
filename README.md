@@ -19,7 +19,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | ---------------------- | ----------------------------------------- |
 | `/`                    | Storefront homepage and featured products |
 | `/products/product-01` | Example product detail page               |
-| `/cart`                | Full cart page                            |
+| `/cart`                | Review and update cart items               |
+| `/checkout`            | Enter customer details and place a demo order |
 
 Product details and homepage product sections read from a catalog repository. The default `CATALOG_MODE=mock` uses `src/data/mock-products.json`, so the storefront works without a database. Product pages use each product's stable `slug`.
 
@@ -45,6 +46,8 @@ The former mock listings repeated some products with conflicting values. The see
 3. Select **Add to cart**. The product, selected color, and quantity appear in the cart drawer.
 4. Change quantities or remove items in the drawer or on `/cart`. The header item count and totals update with the cart.
 5. Refresh the page. Cart items remain because this demo stores them in the browser's local storage.
+6. Select **Proceed to buy** to open `/checkout`, review the order summary, and enter a name and email.
+7. Select **Place demo order**. The server rechecks product prices and options against MongoDB, saves an order record, and opens its confirmation page. This demo does not process payments or ship products.
 
 ## Project Structure
 
@@ -67,4 +70,4 @@ npm run start
 
 ## Scope
 
-This is a frontend portfolio project. Checkout displays a demo message; it does not process payments. Cart data is stored in the current browser, not a server account. Color selection is saved with the cart item, but does not change the product image because the catalog currently has one image per product. There are no account, order-history, or inventory-management pages.
+This is a portfolio demo, not a production store. Demo orders are stored in MongoDB, but do not process payments or represent shipments. Orders are not tied to accounts, and there are no account, customer order-history, or inventory-management pages. Cart data is stored in the current browser, not a server account. Color selection is saved with the cart item, but does not change the product image because the catalog currently has one image per product.
