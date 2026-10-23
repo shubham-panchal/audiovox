@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "product-01",
+    "name": "Skullcandy - Crusher ANC 2 Wireless Headphones",
+    "image": "product-01.png",
+    "price": 299.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "newArrivalBadge": "New"
+  },
+  {
+    "slug": "product-02",
+    "name": "Beats Studio Pro",
+    "image": "product-02.png",
+    "price": 349.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "newArrivalOrder": 1,
+    "newArrivalBadge": "New",
+    "bestSellerOrder": 2,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-03",
+    "name": "Sony - WH-CH720N Wireless Noise Canceling",
+    "image": "product-03.png",
+    "price": 149.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "newArrivalOrder": 2,
+    "newArrivalBadge": "New",
+    "bestSellerOrder": 3,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-04",
+    "name": "Skullcandy - Rail True Wireless Earbuds",
+    "image": "product-04.png",
+    "price": 79.99,
+    "category": "Earbuds",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "newArrivalOrder": 3,
+    "newArrivalBadge": "New",
+    "bestSellerOrder": 4,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-05",
+    "name": "Beats Studio Pro",
+    "image": "product-05.png",
+    "price": 224.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "newArrivalOrder": 4,
+    "newArrivalBadge": "-50%",
+    "bestSellerOrder": 5,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-06",
+    "name": "Sony - WH-1000XM5 Wireless Noise Canceling",
+    "image": "product-06.png",
+    "price": 299.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "bestSellerOrder": 1,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-09",
+    "name": "JBL Reflect Flow Pro+ Bluetooth Sports Earbuds",
+    "image": "product-09.png",
+    "price": 179.95,
+    "category": "Earbuds",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "bestSellerOrder": 6,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-10",
+    "name": "Bose QuietComfort Headphones",
+    "image": "product-10.png",
+    "price": 349,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "bestSellerOrder": 7,
+    "bestSellerBadge": "Hot"
+  },
+  {
+    "slug": "product-11",
+    "name": "AKG Wireless Headphones",
+    "image": "product-11.png",
+    "price": 349.99,
+    "category": "Headphones",
+    "description": "Enjoy clear, balanced sound and a comfortable fit made for everyday listening, at home or on the move.",
+    "colors": ["Black", "White", "Silver"],
+    "bestSellerOrder": 8,
+    "bestSellerBadge": "Hot"
+  }
+]
